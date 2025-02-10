@@ -33,9 +33,9 @@ public class VideojuegosController {
         return videojuegosService.getAllVideojuegos();
     }
 
-    @GetMapping(value = "/{idVideoJuego}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public VideojuegosEntity obtenerVideojuego(@PathVariable("idVideoJuego") Integer idVideoJuego) {
-        return videojuegosService.getVideojuegoById(idVideoJuego);
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public VideojuegosEntity obtenerVideojuego(@PathVariable("id") Integer id) {
+        return videojuegosService.getVideojuegoById(id);
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
@@ -43,15 +43,15 @@ public class VideojuegosController {
         return videojuegosService.saveVideojuego(videojuego);
     }
     
-    @PutMapping(value = "/{idVideoJuego}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public VideojuegosEntity actualizarVideojuego(@PathVariable Integer idVideoJuego, @RequestBody VideojuegosEntity videojuego) {
-        videojuego.setIdVideoJuego(idVideoJuego);
+    @PutMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public VideojuegosEntity actualizarVideojuego(@PathVariable Integer id, @RequestBody VideojuegosEntity videojuego) {
+        videojuego.setId(id);
         return videojuegosService.updateVideojuego(videojuego);
     }
 
-    @DeleteMapping(value = "/{idVideoJuego}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public void eliminarVideojuego(@PathVariable Integer idVideoJuego) {
-        videojuegosService.deleteVideojuego(idVideoJuego);
+    @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public void eliminarVideojuego(@PathVariable Integer id) {
+        videojuegosService.deleteVideojuego(id);
         }
 
 }
