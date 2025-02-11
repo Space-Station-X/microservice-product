@@ -1,6 +1,7 @@
 package com.practice.entity;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.util.Base64;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -14,6 +15,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,25 +30,27 @@ public class VideojuegosEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_video_juego")
-    private Integer idVideoJuego;
-    @Column(name = "de_nombre")
+    private Integer id;
+    @Column(name = "nombre")
     private String nombre;
-    @Column(name = "de_descripcion")
+    @Column(name = "descripcion")
     private String descripcion;
-    @Column(name = "co_plataforma")
+    @Column(name = "plataforma")
     private String plataforma;
-    @Column(name = "de_imagen")
-    private String imagen;
+    @Column(name = "imagen")
+    private byte[] imagen;
     @Column(name = "nu_copias")
     private int nuCopias;
+    @Column(name = "genero")
+    private String genero;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @Column(name = "fe_reg")
-    private LocalDateTime feReg;
-    @Column(name = "st_activo")
-    private String stActivo;
-    @Column(name = "im_precio_venta")
-    private double imPrecioVenta;
+    private LocalDate feReg;
+    @Column(name = "precio")
+    private double precio;
+
+    
 }
