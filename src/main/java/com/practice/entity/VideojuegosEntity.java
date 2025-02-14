@@ -38,7 +38,7 @@ public class VideojuegosEntity {
     @Column(name = "plataforma")
     private String plataforma;
     @Column(name = "imagen")
-    private byte[] imagen;
+    private String imagen;
     @Column(name = "nu_copias")
     private int nuCopias;
     @Column(name = "genero")
