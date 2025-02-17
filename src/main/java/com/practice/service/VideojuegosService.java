@@ -5,9 +5,9 @@ import java.util.List;
 import com.practice.entity.VideojuegosEntity;
 
 public interface VideojuegosService {
-    public List<VideojuegosEntity> getAllVideojuegos();
-    public VideojuegosEntity getVideojuegoById(Integer id);
-    public VideojuegosEntity saveVideojuego(VideojuegosEntity videojuegos);
-    public VideojuegosEntity updateVideojuego(VideojuegosEntity videojuegos);
-    public void deleteVideojuego(Integer id);
+    List<VideojuegosEntity> getAllVideojuegos();
+    VideojuegosEntity getVideojuegoById(Integer id);
+    VideojuegosEntity saveVideojuego(VideojuegosEntity videojuegos);
+    VideojuegosEntity updateVideojuego(VideojuegosEntity videojuegos);
+    void deleteVideojuego(Integer id);
 }
