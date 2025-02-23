@@ -2,7 +2,7 @@ package com.practice.service.impl;
 
 import java.util.List;
 
-import org.hibernate.id.IntegralDataTypeHolder;
+import com.practice.exceptions.VideoJuegoNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +24,7 @@ public class VideojuegosServiceImpl implements VideojuegosService {
 
     @Override
     public VideojuegosEntity getVideojuegoById(Integer id) {
-        return videojuegosRepository.findById(id).orElse(null);
+        return videojuegosRepository.findById(id).orElseThrow(() -> new VideoJuegoNotFoundException("Video Juego con id :" + id + "no encontrado"));
     }
 
     @Override
@@ -41,5 +41,5 @@ public class VideojuegosServiceImpl implements VideojuegosService {
     public void deleteVideojuego(Integer id) {
         videojuegosRepository.deleteById(id);
     }
-    
+
 }
