@@ -31,26 +31,28 @@ public class VideojuegosEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_video_juego")
     private Integer id;
-    @Column(name = "nombre")
+    @Column(name = "de_nombre")
     private String nombre;
-    @Column(name = "descripcion")
+    @Column(name = "de_descripcion")
     private String descripcion;
-    @Column(name = "plataforma")
+    @Column(name = "co_plataforma")
     private String plataforma;
-    @Column(name = "imagen")
-    private byte[] imagen;
+    @Column(name = "de_imagen")
+    private String imagen;
     @Column(name = "nu_copias")
     private int nuCopias;
-    @Column(name = "genero")
-    private String genero;
+    //@Column(name = "genero")
+    //private String genero;
+    @Column(name = "st_activo")
+    private String activo;
 
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @JsonFormat(pattern = "yyyy-MM-dd")
     @Column(name = "fe_reg")
     private LocalDate feReg;
-    @Column(name = "precio")
-    private double precio;
+    @Column(name = "im_precio_venta")
+    private Double precio;
 
     
 }
